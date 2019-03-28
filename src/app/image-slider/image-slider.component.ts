@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'image-slider',
@@ -6,12 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
     styleUrls: ['./image-slider.component.css']
 })
 
-export class ImageSliderComponent implements OnInit {
+export class ImageSliderComponent {
     @Input() slides: any = [];
     slideConfig = { "slidesToShow": 1, "slidesToScroll": 1, "arrows": true };
-    ngOnInit() {
-        // ...
-        console.log(this.slides, 'ye hai raula');
-    }
+   
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap';
 import { Urls } from '../../environments/environment';
 import { ProductService } from './product.service';
@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
     providers: [ProductService]
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
     bsModalRef: BsModalRef;
     products: any = [];
     selectedItem: any;
@@ -22,6 +22,10 @@ export class HomeComponent {
         private modalService: BsModalService,
         private productService: ProductService
     ) {
+
+    }
+
+    ngOnInit() {
         this.getProducts();
     }
 
