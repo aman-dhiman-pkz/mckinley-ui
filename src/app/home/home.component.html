@@ -1,0 +1,60 @@
+<div class="align-horizontal ptb20px">
+    <div class="heading">
+        <h4 class="logo">McKinley & Rice </h4>
+    </div>
+    <div>
+        <button type="button" class="close add-btn" (click)="openModal(createItemModal)">
+            Add Product
+        </button>
+    </div>
+</div>
+
+<div class="table-container" *ngIf="products.length">
+    <table class="product-table">
+        <tr>
+            <th>Product Name</th>
+            <th>Product Category</th>
+            <th>Product Sub Category</th>
+            <th>Product Cost</th>
+            <th>Product Sizes</th>
+            <th>Images</th>
+        </tr>
+
+        <tr *ngFor="let product of products">
+            <td>{{product.productname}}</td>
+            <td>{{product.productcategory}}</td>
+            <td>{{product.productsubcategory}}</td>
+            <td>{{product.productcost}}</td>
+            <td>{{product.productsizes}}</td>
+            <td (click)="openImageSlider(imageSlider,product)"><span class="link">Images</span></td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="!products.length" class="empty-container">
+    No Product to show, Please click on Add Product to add
+</div>
+
+
+
+<ng-template #createItemModal>
+    <div class="align-horizontal">
+        <label class="label-container">Add Product Item</label>
+        <button type="button" class="close cross-button" aria-label="Close" (click)="hideModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <create-prduct (hideModal)="hideModal($event)" (refershTable)="getProducts($event)"></create-prduct>
+</ng-template>
+
+<ng-template #imageSlider>
+    <div class="align-horizontal">
+        <label class="label-container">{{selectedItem.productname}}</label>
+        <button type="button" class="close cross-button" aria-label="Close" (click)="hideModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
+    <image-slider [slides]="convertToUrl(selectedItem.image)"></image-slider>
+</ng-template>

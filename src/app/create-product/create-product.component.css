@@ -1,0 +1,42 @@
+.detail-container{
+    padding: 25px;
+}
+.form-item{
+    padding: 5px;
+}
+
+.form-button{
+    background-image: linear-gradient(#4CAF92, #4CAF50);
+    color: #ffff;
+    width: 100%;
+}
+
+.upload-lable-container{
+    margin-bottom: 10px;
+    padding-left: 6px;
+  }
+
+#input-choose{
+   display: none;
+ }
+
+ .upload-button{
+    padding: 5px;
+    color: #ffffff;
+    background-image: linear-gradient(#4CAF92, #4CAF50);
+    cursor: pointer;
+  }
+
+.img-size{
+   width: 60px;
+   height: 60px;
+}
+
+.ptb10px{
+    padding-bottom: 10px;
+}
+
+.error{
+  color: red;
+}
+

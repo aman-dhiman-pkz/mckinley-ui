@@ -1,0 +1,91 @@
+<div class="detail-container">
+    <form [formGroup]="createProductForm" (ngSubmit)="submitForm()" novalidate>
+
+        <!--Product Name -->
+        <div class="row">
+            <div class="col-sm-5 form-item form-label">
+                <span>Product Name</span>
+            </div>
+            <div class="col-sm-7 form-item ">
+                <input type="text" formControlName="productname" class="form-control" name="productname">
+                <p *ngIf="createProductForm.controls.productname.errors?.required && createProductForm.controls.productname.dirty"
+                    class="error">Product Name Required!
+                </p>
+            </div>
+        </div>
+
+        <!--Product Category -->
+        <div class="row">
+            <div class="col-sm-5 form-item form-label">
+                <span>Product Category</span>
+            </div>
+            <div class="col-sm-7 form-item ">
+                <input type="text" formControlName="productcategory" class="form-control" name="productcategory">
+                <p *ngIf="createProductForm.controls.productcategory.errors?.required && createProductForm.controls.productcategory.dirty"
+                    class="error">Product Category Required!
+                </p>
+            </div>
+        </div>
+
+        <!--Product Sub Category -->
+        <div class="row">
+            <div class="col-sm-5 form-item form-label">
+                <span>Product Sub Category</span>
+            </div>
+            <div class="col-sm-7 form-item ">
+                <input type="text" formControlName="productsubcategory" class="form-control" name="productsubcategory">
+                <p *ngIf="createProductForm.controls.productsubcategory.errors?.required && createProductForm.controls.productsubcategory.dirty"
+                    class="error">Product Sub Category Required!
+                </p>
+            </div>
+        </div>
+
+        <!--Product Cost -->
+        <div class="row">
+            <div class="col-sm-5 form-item form-label">
+                <span>Product Cost</span>
+            </div>
+            <div class="col-sm-7 form-item ">
+                <input type="text" formControlName="productcost" class="form-control" name="productcost">
+                <p *ngIf="createProductForm.controls.productcost.errors?.required && createProductForm.controls.productcost.dirty"
+                    class="error">Product Cost Required!
+                </p>
+            </div>
+        </div>
+
+        <!--Product Sizes -->
+        <div class="row">
+            <div class="col-sm-5 form-item form-label">
+                <span>Product Sizes</span>
+            </div>
+            <div class="col-sm-7 form-item ">
+                <input type="text" formControlName="productsizes" class="form-control" name="productsizes">
+                <p *ngIf="createProductForm.controls.productsizes.errors?.required && createProductForm.controls.productsizes.dirty"
+                    class="error">Product Sizes Required!
+                </p>
+            </div>
+        </div>
+
+        <div *ngFor="let img of images" class="ptb10px">
+            <img [src]="url+'download/files/'+img" class="img-size" />
+        </div>
+
+        <div class="row">
+            <div class="upload-lable-container">
+                <input id="input-choose" type="file" accept="image/*" multiple="false" size="60"
+                    (change)="onFileChange($event)" />
+                <label for="input-choose"
+                    class="upload-button">{{ images.length? 'Add more images':'Add Image'}}</label>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="row btn-padding">
+
+            <button type="submit" class="btn form-button" [disabled]="(!createProductForm.valid || loading)">
+                <span>CREATE</span>
+            </button>
+
+        </div>
+    </form>
+</div>

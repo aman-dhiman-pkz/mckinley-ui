@@ -1,0 +1,95 @@
+.cross-button{
+    float: right;
+    padding-right: 18px;
+    padding-top: 10px;
+}
+
+.align-horizontal{
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+
+.label-container{
+    width: 95%;
+    padding-left: 15px;
+    padding-top: 16px;
+    font-size: 22px;
+}
+
+
+.product-table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .product-table td, .product-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .product-table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .product-table tr:hover {background-color: #ddd;}
+  
+  .product-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .link{
+      color:#4CAF50;
+  }
+
+  .link:hover{
+      text-decoration: underline;
+      cursor: pointer;
+  }
+
+  .heading{
+    padding-top: 10px;
+    padding-left: 15px;
+    width: 85%;
+  }
+
+  .ptb20px{
+    padding-bottom: 20px;
+}
+
+.add-btn{
+    border: 1px solid #4CAF50;
+    padding: 5px;
+}
+
+.add-btn:hover{
+    background-image: linear-gradient(#4CAF92, #4CAF50);
+    color: white;
+}
+
+.logo{
+    width: 18%;
+    padding: 5px;
+    background-image: linear-gradient(#4CAF92, #4CAF50);
+    color: white;
+}
+
+.table-container{
+    padding-right: 35px;
+    padding-left: 15px;
+}
+
+.empty-container{
+    text-align: center;
+    padding-top: 50px;
+    border: 1px solid;
+    font-size: 24px;
+    padding-bottom: 50px;
+    margin-right: 35px;
+    margin-left: 15px;
+    background-image: linear-gradient(#4CAF92, #4CAF50);
+    color: white;
+}

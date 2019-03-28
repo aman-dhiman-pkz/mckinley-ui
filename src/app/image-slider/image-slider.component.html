@@ -1,0 +1,8 @@
+<div class="slider-container">
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <img src="{{ slide }}" alt="" width="100%" height="500px">
+        </div>
+    </ngx-slick-carousel>
+    <h1 *ngIf="!slides.length">No Images</h1>
+</div>
