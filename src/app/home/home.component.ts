@@ -33,18 +33,17 @@ export class HomeComponent {
         this.bsModalRef.hide();
     }
 
-    onFileChange(evt: any) {
-        const formData = new FormData();
-        formData.append("file", evt.target.files[0]);
-        this.productService.uploadImage(formData).subscribe(data => {
-            console.log(data, 'upload Image');
-        })
-    }
-
     getProducts() {
         this.productService.getAllProducts().subscribe(data => {
-            console.log(data, 'njn')
             this.products = data;
+        }, err => {
+            let message = 'Something Went wrong';
+            try {
+                message = JSON.parse(err).msg;
+            } catch (err) {
+                console.log(err, 'ETIM Password');
+            }
+            alert(message);
         })
     }
 
